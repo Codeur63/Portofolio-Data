@@ -1,0 +1,24 @@
+@import 'tailwindcss';
+@import "@nuxt/ui";
+
+@theme{
+    --color-text:#1C1C1C;
+    --color-background:#FAFAFF;
+    --color-primary:#2de1fc;
+    --color-secondary:#985F99;
+    --color-accent:#9BE564;
+    --color-muted:;
+    --font-sans:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+body{
+    color: var(--color-text)
+}
+
+.dark {
+  --color-background: #100A18;
+  --color-surface: #1A1024;
+  --color-foreground: #F5EEF8;
+  --color-primary: #A85BE0;
+  --color-text: #FAFAFF;
+}
