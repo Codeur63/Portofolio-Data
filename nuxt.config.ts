@@ -49,7 +49,9 @@ export default defineNuxtConfig({
             })
     ]
   },
-
+  ogImage: {
+    enabled: false
+  },
   modules: [
     '@nuxt/image',
     '@nuxt/icon',
