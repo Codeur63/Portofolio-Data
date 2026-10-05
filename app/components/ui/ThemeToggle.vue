@@ -1,95 +1,137 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
+const isDark = computed(() => colorMode.value === 'dark')
+
 const toggleTheme = () => {
-  colorMode.preference =
-    colorMode.preference === 'dark'
-      ? 'light'
-      : 'dark'
+  colorMode.preference = isDark.value ? 'light' : 'dark'
 }
+
+const themeLabel = computed(() =>
+  isDark.value
+    ? 'Switch to light mode'
+    : 'Switch to dark mode',
+)
 </script>
 
 <template>
   <ClientOnly>
     <button
       type="button"
-      class="flex h-10 w-10 items-center justify-center rounded-full border border-border bg-surface text-foreground transition-all duration-200 hover:border-primary hover:text-primary"
-      :aria-label="
-        colorMode.preference === 'dark'
-          ? 'Activer le mode clair'
-          : 'Activer le mode sombre'
+      class="
+        flex h-10 w-10
+        shrink-0
+        items-center justify-center
+        rounded-xl
+        border border-border/20 dark:border-text/20
+        text-text
+        transition-[background-color,color,transform]
+        duration-200
+        ease-out
+
+        hover:bg-black/[0.045]
+        hover:text-primary
+
+        active:scale-95
+
+        focus-visible:outline-none
+        focus-visible:ring-2
+        focus-visible:ring-primary
+        focus-visible:ring-offset-2
+        focus-visible:ring-offset-white
+        cursor-pointer
+        motion-reduce:transition-none
+
+        dark:hover:bg-white/[0.07]
+        dark:focus-visible:ring-offset-background
       "
+      :aria-label="themeLabel"
       @click="toggleTheme"
     >
-      <!-- Soleil -->
-      <svg
-        v-if="colorMode.preference === 'dark'"
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
+      <Transition
+        mode="out-in"
+        enter-active-class="
+          transition-[transform,opacity]
+          duration-200
+          ease-out
+          motion-reduce:transition-none
+        "
+        enter-from-class="scale-75 rotate-45 opacity-0"
+        enter-to-class="scale-100 rotate-0 opacity-100"
+        leave-active-class="
+          transition-[transform,opacity]
+          duration-150
+          ease-in
+          motion-reduce:transition-none
+        "
+        leave-from-class="scale-100 rotate-0 opacity-100"
+        leave-to-class="scale-75 -rotate-45 opacity-0"
       >
-        <circle
-          cx="12"
-          cy="12"
-          r="4"
-        />
+        <!-- Sun -->
+        <svg
+          v-if="isDark"
+          key="sun"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-5 w-5"
+          aria-hidden="true"
+        >
+          <circle
+            cx="12"
+            cy="12"
+            r="3.5"
+          />
 
-        <path
-          d="M12 2v2"
-        />
+          <path d="M12 2.5v2" />
+          <path d="M12 19.5v2" />
+          <path d="m5.28 5.28 1.42 1.42" />
+          <path d="m17.3 17.3 1.42 1.42" />
+          <path d="M2.5 12h2" />
+          <path d="M19.5 12h2" />
+          <path d="m6.7 17.3-1.42 1.42" />
+          <path d="m18.72 5.28-1.42 1.42" />
+        </svg>
 
-        <path
-          d="M12 20v2"
-        />
-
-        <path
-          d="m4.93 4.93 1.41 1.41"
-        />
-
-        <path
-          d="m17.66 17.66 1.41 1.41"
-        />
-
-        <path
-          d="M2 12h2"
-        />
-
-        <path
-          d="M20 12h2"
-        />
-
-        <path
-          d="m6.34 17.66-1.41 1.41"
-        />
-
-        <path
-          d="m19.07 4.93-1.41 1.41"
-        />
-      </svg>
-
-      <!-- Lune -->
-      <svg
-        v-else
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-5 w-5"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path
-          d="M21 12.79A9 9 0 1 1 11.21 3
-             7 7 0 0 0 21 12.79z"
-        />
-      </svg>
+        <!-- Moon -->
+        <svg
+          v-else
+          key="moon"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="h-5 w-5"
+          aria-hidden="true"
+        >
+          <path
+            d="
+              M20.5 14.2
+              A8.5 8.5 0 0 1
+              9.8 3.5
+              A8.5 8.5 0 1 0
+              20.5 14.2Z
+            "
+          />
+        </svg>
+      </Transition>
     </button>
 
     <template #fallback>
-      <div
-        class="h-10 w-10 rounded-full border border-border bg-surface"
+      <span
+        class="
+          block h-10 w-10
+          shrink-0
+          rounded-2xl
+        "
+        aria-hidden="true"
       />
     </template>
   </ClientOnly>

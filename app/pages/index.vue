@@ -1,11 +1,31 @@
 <script setup lang="ts">
-import Acceuil from '~/pages/accueil/Acceuil.vue';
-import TechStack from '~/pages/accueil/section/TechStack.vue';
+import Acceuil from "@/views/accueil/Acceuil.vue";
 
-</script>
+useSeoMeta({
+  title: 'Software, Data & AI Engineering',
+  description:
+    'Xiani designs and builds software, data engineering and artificial intelligence systems for modern digital products.',
+  ogTitle: 'Xiani — Software, Data & AI Engineering',
+  ogDescription:
+    'Engineering software, data and artificial intelligence systems designed for real-world applications.',
+  ogType: 'website',
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: '/',
+    },
+  ],
+})
+
+</script> 
+
 
 <template>
-    <section>
+    <div>
         <Acceuil/>
-    </section>
-</template>
+    </div>
+</template> 

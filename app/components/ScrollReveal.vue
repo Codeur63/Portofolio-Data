@@ -1,51 +1,120 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-// Enregistrement du plugin ScrollTrigger auprès de GSAP
-gsap.registerPlugin(ScrollTrigger)
+const props = withDefaults(
+  defineProps<{
+    direction?: 'left' | 'right'
+    distance?: number
+    duration?: number
+  }>(),
+  {
+    direction: 'left',
+    distance: 60,
+    duration: 700,
+  }
+)
 
 const elementRef = ref<HTMLElement | null>(null)
-let ctx: gsap.Context | null = null
+const isVisible = ref(false)
+
+let observer: IntersectionObserver | null = null
 
 onMounted(() => {
-  if (!elementRef.value) return
+  const element = elementRef.value
 
-  ctx = gsap.context(() => {
-    // Vérification des préférences utilisateur (accessibilité)
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReducedMotion) return
+  if (!element) return
 
-    // Animation au défilement
-    gsap.fromTo(elementRef.value, 
-      {
-        x: -100,      // Position de départ : 100px vers la gauche
-        opacity: 0,   // Invisible au départ
-      },
-      {
-        x: 0,         // Rejoint sa position d'origine
-        opacity: 1,   // Devient totalement visible
-        duration: 1.2,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: elementRef.value, // L'animation se déclenche sur cet élément
-          start: 'top 50%',          // Démarre quand le haut de l'élément atteint 85% de la hauteur de l'écran
-          toggleActions: 'play none none none', // Joue l'animation une seule fois au scroll
-        }
-      }
-    )
-  })
+  /*
+   * Accessibilité :
+   * aucune animation si l'utilisateur demande
+   * une réduction des mouvements.
+   */
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches
+
+  if (prefersReducedMotion) {
+    isVisible.value = true
+    return
+  }
+
+  /*
+   * IntersectionObserver est suffisant ici.
+   * Aucun GSAP / ScrollTrigger nécessaire.
+   */
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      if (!entry?.isIntersecting) return
+
+      isVisible.value = true
+
+      /*
+       * Animation exécutée une seule fois.
+       * Une fois visible, plus besoin d'observer.
+       */
+      observer?.disconnect()
+      observer = null
+    },
+    {
+      /*
+       * Déclenche légèrement avant que l'élément
+       * n'entre profondément dans le viewport.
+       */
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.05,
+    }
+  )
+
+  observer.observe(element)
 })
 
 onBeforeUnmount(() => {
-  ctx?.revert() // Nettoyage propre pour éviter les fuites de mémoire Nuxt
+  observer?.disconnect()
+  observer = null
 })
 </script>
 
 <template>
-  <!-- Le conteneur enveloppe le contenu via un <slot /> -->
-  <div ref="elementRef" class="w-full">
+  <div
+    ref="elementRef"
+    class="scroll-reveal w-full"
+    :class="{ 'scroll-reveal--visible': isVisible }"
+    :style="{
+      '--reveal-distance':
+        `${props.direction === 'left' ? -props.distance : props.distance}px`,
+      '--reveal-duration': `${props.duration}ms`,
+    }"
+  >
     <slot />
   </div>
 </template>
+
+<style scoped>
+.scroll-reveal {
+  opacity: 0;
+
+  transform: translate3d(
+    var(--reveal-distance),
+    0,
+    0
+  );
+
+  transition:
+    opacity var(--reveal-duration) ease,
+    transform var(--reveal-duration)
+      cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.scroll-reveal--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+</style>

@@ -1,19 +1,67 @@
-@import 'tailwindcss';
-@import "@nuxt/ui";
+@import "tailwindcss";
 
-@theme{
-    --color-text:#1C1C1C;
-    --color-background:#FAFAFF;
-    --color-primary:#2de1fc;
-    --color-secondary:#985F99;
-    --color-accent:#9BE564;
-    --color-muted:;
-    --font-sans:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+/* Fonts */
+
+@font-face {
+  font-family: "Mulish";
+  src: url("/fonts/Mulish/static/Mulish-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
 
-body{
-    color: var(--color-text)
+@font-face {
+  font-family: "Mulish";
+  src: url("/fonts/Mulish/static/Mulish-Medium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
 }
+
+@font-face {
+  font-family: "Mulish";
+  src: url("/fonts/Mulish/static/Mulish-SemiBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: url("/fonts/Mulish/static/Mulish-Bold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Theme */
+
+@theme {
+  --color-text: #1C1C1C;
+  --color-background: #FAFAFF;
+  --color-primary: #2DE1FC;
+  --color-secondary: #985F99;
+  --color-accent: #9BE564;
+  --color-muted: #6B7280;
+
+  --font-sans: "Mulish", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+
+/* Global Styles */
+
+html,
+body {
+  color: var(--color-text);
+  font-family: "Mulish", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+
+
+/* Theme Dark */
 
 .dark {
   --color-background: #100A18;
