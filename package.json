@@ -15,6 +15,7 @@
     "@nuxt/ui": "^4.11.2",
     "@nuxtjs/color-mode": "^4.0.1",
     "@nuxtjs/seo": "^5.3.16",
+    "@react-email/render": "^2.1.0",
     "@tailwindcss/postcss": "^4.3.3",
     "@takumi-rs/core": "^2.14.0",
     "@tiptap/core": "^3.31.3",
