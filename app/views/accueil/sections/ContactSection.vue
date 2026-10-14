@@ -2,10 +2,11 @@
 
 const colormode = useColorMode()
 
-const contactImage = colormode.value === 'dark'
-  ? '/images/contact/avatar-3-dark.png'
-  : '/images/contact/avatar-3-light.png'
-
+const contactImage = computed(() =>
+  colormode.value === 'dark'
+    ? '/images/contact/avatar-3-dark.webp'
+    : '/images/contact/avatar-3-light.webp'
+)
 
 </script>
 <template>
@@ -23,8 +24,8 @@ const contactImage = colormode.value === 'dark'
           bg-gradient-to-br
           from-primary/[0.07]
           via-transparent
-          to-secondary[1]
-  
+          to-secondary/10
+
           dark:from-primary/[0.09]
           dark:to-secondary/[0.07]
         "
@@ -81,9 +82,10 @@ const contactImage = colormode.value === 'dark'
         <NuxtLink
           to="/contact"
           class="group mt-9 inline-flex min-h-12
-                 items-center gap-3  border-b border-border border-primary px-6 hover:text-primary
-                 text-sm font-semibold 
-                 transition-transform duration-300
+                 items-center gap-3 border-b border-primary/40 px-6
+                 text-sm font-semibold
+                 transition-[color,border-color,transform] duration-300
+                 hover:border-primary hover:text-primary
                  hover:-translate-y-0.5
                  focus-visible:outline-2
                  focus-visible:outline-offset-4
@@ -127,13 +129,7 @@ const contactImage = colormode.value === 'dark'
                  rounded-full bg-primary/[0.10] blur-[100px]"
         />
 
-        <picture>
-          <source
-            media="(prefers-color-scheme: dark)"
-            :srcset="contactImage"
-          />
-
-          <img
+        <img
             :src="contactImage"
             alt=""
             width="440"
@@ -142,7 +138,6 @@ const contactImage = colormode.value === 'dark'
             decoding="async"
             class="max-h-[520px] w-auto object-contain object-bottom"
           />
-        </picture>
       </div>
     </div>
   </section>

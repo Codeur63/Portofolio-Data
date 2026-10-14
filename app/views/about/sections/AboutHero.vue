@@ -3,8 +3,8 @@ const colorMode = useColorMode()
 
 const heroImage = computed(() =>
   colorMode.value === 'dark'
-    ? '/images/about/about-2.png'
-    : '/images/about/about-1.png'
+    ? '/images/about/about-2.webp'
+    : '/images/about/about-1.webp'
 )
 
 </script>
@@ -14,7 +14,7 @@ const heroImage = computed(() =>
     id="about-intro"
     aria-labelledby="about-hero-title"
     class="
-    mx-auto max-w-7xl px-5 pb-12 pt-20 sm:px-6 sm:pt-24 lg:px-8 lg:pt-28
+    relative isolate mx-auto max-w-7xl px-5 pb-16 pt-28 sm:px-6 sm:pt-32 lg:px-8 lg:pb-24 lg:pt-36
     "
   >
     <!-- Decorative glow -->
@@ -49,7 +49,7 @@ const heroImage = computed(() =>
             max-w-3xl
             text-[clamp(2.8rem,6.2vw,6.2rem)]
             font-semibold
-            leading-[1.02]
+            leading-[0.98]
             tracking-[-0.055em]
             text-text
           "
@@ -91,6 +91,8 @@ const heroImage = computed(() =>
 
               hover:border-primary
               
+              focus-visible:outline
+              focus-visible:outline-2
               focus-visible:outline-offset-4
               focus-visible:outline-primary
 
@@ -142,8 +144,7 @@ const heroImage = computed(() =>
         >
             <NuxtImg
               :src="heroImage"
-              alt="Avatar Xiani"
-              aria-hidden="true"              
+              alt=""
               width="800"
               height="1000"
               sizes="490px"

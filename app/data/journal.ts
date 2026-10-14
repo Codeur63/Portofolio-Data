@@ -46,7 +46,7 @@ export const journalEntries: JournalEntry[] = [
 
     date: '2026-10-01',
 
-    image: '/images/skills/skill-rag-2.png',
+    image: '/images/skills/skill-rag-2.webp',
 
     imageAlt:
       'Architecture of a Redis cache-aside implementation',
@@ -111,7 +111,7 @@ export const journalEntries: JournalEntry[] = [
 
     date: '2026-09-18',
 
-    image: '/images/skills/skill-rag-2.png',
+    image: '/images/skills/skill-rag-2.webp',
 
     imageAlt:
       'Retrieval-augmented generation system architecture',
@@ -141,7 +141,7 @@ export const journalEntries: JournalEntry[] = [
 
     date: '2026-08-12',
 
-    image: '/images/skills/skill-data-mlflow.png',
+    image: '/images/skills/skill-data-mlflow.webp',
 
     imageAlt:
       'Machine learning model experimentation results',

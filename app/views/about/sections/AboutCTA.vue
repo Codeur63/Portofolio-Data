@@ -138,7 +138,7 @@
         bg-gradient-to-br
         from-primary/[0.07]
         via-transparent
-        to-secondary[1]
+        to-secondary/10
 
         dark:from-primary/[0.09]
         dark:to-secondary/[0.07]

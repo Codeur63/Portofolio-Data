@@ -4,8 +4,8 @@ const aiProjects = [
     title: 'Computer Vision',
     subtitle: 'YOLOv8 · Object Detection',
     meta: 'BDD100K',
-    image: '/images/skills/skill-yolo.png',
-    mobileImage: '/images/skills/skill-yolo-2.png',
+    image: '/images/skills/skill-yolo.webp',
+    mobileImage: '/images/skills/skill-yolo-2.webp',
     alt: 'YOLOv8 object detection results on the BDD100K dataset',
     number: '01',
   },
@@ -13,7 +13,7 @@ const aiProjects = [
     title: 'Machine Learning',
     subtitle: 'Training · Experimentation',
     meta: 'Model development',
-    image: '/images/skills/skill-fine-tuning.png',
+    image: '/images/skills/skill-fine-tuning.webp',
     alt: 'Machine learning model experimentation interface',
     number: '02',
   },
@@ -21,8 +21,8 @@ const aiProjects = [
     title: 'RAG System',
     subtitle: 'Retrieval · Context · Generation',
     meta: '9.7K documents',
-    image: '/images/skills/skill-rag-2.png',
-    mobileImage: '/images/skills/skill-rag.png',
+    image: '/images/skills/skill-rag-2.webp',
+    mobileImage: '/images/skills/skill-rag.webp',
     alt: 'Architecture and interface of a retrieval-augmented generation system',
     number: '03',
   },
@@ -30,7 +30,7 @@ const aiProjects = [
     title: 'AI Agent',
     subtitle: 'LLM · Tools · Memory · RAG',
     meta: 'Agentic workflow',
-    image: '/images/skills/skill-agent.png',
+    image: '/images/skills/skill-agent.webp',
     alt: 'Architecture of an AI agent using tools, memory and RAG',
     number: '04',
   },
@@ -39,7 +39,7 @@ const aiProjects = [
 
 <template>
   <section
-    class="relative isolate overflow-hidden px-4 py-24
+    class="relative isolate overflow-hidden px-5 py-24
            sm:px-6 sm:py-28 lg:px-8 xl:py-32"
     aria-labelledby="ai-title"
   >
@@ -204,7 +204,7 @@ const aiProjects = [
       <!-- Link -->
       <div class="mt-5">
         <NuxtLink
-          to="/projects"
+          to="/journal"
           class="group inline-flex items-center gap-2
                  text-xs font-semibold text-text
                  transition-colors hover:text-primary

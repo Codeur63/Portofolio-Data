@@ -29,7 +29,7 @@ export const caseStudies: Record<string, CaseStudy> = {
     outcome: 'Sur le scénario mesuré : MongoDB 0,740 ms ; Redis 0,233 ms, soit environ 3,2 fois plus rapide.',
     limits: 'Ce résultat est propre au benchmark réalisé. Il ne prédit pas à lui seul les performances en production : charge, taux de succès du cache, invalidation et infrastructure doivent aussi être évalués.',
     stack: ['MongoDB', 'Redis', 'Cache-aside', 'Benchmark'],
-    image: '/images/skills/skill-data.png', imageAlt: 'Capture technique du projet Solarmboa'
+    image: '/images/skills/skill-data.webp', imageAlt: 'Capture technique du projet Solarmboa'
   },
   'credit-scoring': {
     slug: 'credit-scoring', title: 'Credit Scoring', eyebrow: 'Machine Learning · Étude de cas',

@@ -34,7 +34,7 @@ const solutions = [
     description:
       'Use data to identify trends, anomalies and events that require attention.',
     technologies: ['ML', 'Forecasting', 'Vision'],
-    image: '/images/solutions/sigmoid.png',
+    image: '/images/solutions/sigmoid.webp',
     imageAlt: 'Machine learning prediction visualization',
     className: 'lg:col-span-1',
   },
@@ -45,7 +45,7 @@ const solutions = [
     description:
       'Make internal documents and knowledge accessible through semantic search, RAG and AI assistants.',
     technologies: ['RAG', 'LLM', 'Vector Search'],
-    image: '/images/solutions/genAI.png',
+    image: '/images/solutions/genAI.webp',
     imageAlt: 'Generative AI system visualization',
     className: 'lg:col-span-1',
   },

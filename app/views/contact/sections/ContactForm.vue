@@ -99,7 +99,7 @@ async function submit() {
             maxlength="120"
             class="
               mt-2 w-full
-              border-b 
+              border-b border-text/20
               bg-transparent
               py-3
               text-text
@@ -125,7 +125,7 @@ async function submit() {
             maxlength="254"
             class="
               mt-2 w-full
-              border-b 
+              border-b border-text/20
               bg-transparent
               py-3
               text-text
@@ -155,7 +155,7 @@ async function submit() {
             maxlength="160"
             class="
               mt-2 w-full
-              border-b
+              border-b border-text/20
               bg-transparent
               py-3
               text-text
@@ -180,7 +180,7 @@ async function submit() {
             class="
               mt-2 w-full
               cursor-pointer
-              border-b 
+              border-b border-text/20
               bg-transparent
               py-3
               text-text
@@ -220,7 +220,7 @@ async function submit() {
               mt-2
               min-h-32 w-full
               resize-y
-              border-b 
+              border-b border-text/20
               bg-transparent
               py-3
               text-text
@@ -261,7 +261,7 @@ async function submit() {
           class="
             inline-flex min-h-12
             items-center justify-center
-            rounded-lg border border-border border-primary/70
+            rounded-lg border border-primary/70
             px-8
             text-sm font-semibold
             text-text
@@ -296,7 +296,7 @@ async function submit() {
           class="text-sm font-medium"
           :class="
             status === 'error'
-              ? 'text-red-600 dark:text-red-400'
+              ? 'text-error'
               : 'text-muted'
           "
         >

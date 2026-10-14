@@ -98,7 +98,7 @@ const capabilities = [
                         class="relative overflow-hidden bg-surface flex justify-center"
                     >
                         <img
-                            src="/images/skills/skill-web.png"
+                            src="/images/skills/skill-web.webp"
                             alt="Capture d'écran d'une application web conçue et développée"
                             width="600"
                             height="620"

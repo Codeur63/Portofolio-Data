@@ -8,16 +8,18 @@ const navigation = [
   { label: 'Contact', to: '/contact' },
 ] as const
 
+const { public: publicConfig } = useRuntimeConfig()
+
 const socialLinks = [
   {
     label: 'GitHub',
-    href: 'TON_URL_GITHUB',
+    href: publicConfig.githubUrl,
   },
   {
     label: 'LinkedIn',
-    href: 'TON_URL_LINKEDIN',
+    href: publicConfig.linkedinUrl,
   },
-] as const
+].filter(link => /^https?:\/\//.test(link.href))
 </script>
 
 <template>
@@ -71,7 +73,7 @@ const socialLinks = [
             aria-label="Xiani — Home"
           >
             <NuxtImg
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt=""
               aria-hidden="true"
               width="32"
@@ -220,6 +222,7 @@ const socialLinks = [
 
         <!-- Social -->
         <div
+          v-if="socialLinks.length"
           class="
             md:col-span-3
             lg:col-span-3

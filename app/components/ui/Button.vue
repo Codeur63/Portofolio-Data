@@ -32,7 +32,7 @@ withDefaults(defineProps<Props>(), {
     class="inline-flex items-center justify-center gap-2 rounded-xl font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:pointer-events-none disabled:opacity-50"
     :class="{
       // Variants
-      'bg-primary text-white hover:bg-primary-hover':
+      'bg-primary text-primary-ink hover:bg-primary-hover':
         variant === 'primary',
 
       'bg-data text-[#100A18] hover:opacity-90':

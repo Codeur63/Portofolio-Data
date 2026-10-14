@@ -5,6 +5,18 @@ const route = useRoute()
 
 const isMenuOpen = ref(false)
 
+const scrolled = ref(false)
+
+onMounted(() => {
+  const onScroll = () => {
+    scrolled.value = window.scrollY > 8
+  }
+
+  onScroll()
+  window.addEventListener('scroll', onScroll, { passive: true })
+  onBeforeUnmount(() => window.removeEventListener('scroll', onScroll))
+})
+
 const navigation = [
   { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
@@ -35,32 +47,25 @@ watch(
 <template>
   <header
     class="
-      sticky top-3 z-50
-      mx-3 mt-3
-      sm:top-4 sm:mx-5 sm:mt-4
-      lg:mx-auto lg:max-w-3xl
+      fixed inset-x-0 top-0 z-50
+      border-b
+      transition-[background-color,border-color,box-shadow]
+      duration-300
+      motion-reduce:transition-none
+    "
+    :class="
+      scrolled
+        ? 'border-black/[0.06] bg-white/80 shadow-[0_8px_30px_rgba(15,23,42,0.06)] backdrop-blur-lg dark:border-white/[0.08] dark:bg-background/85 dark:shadow-[0_8px_30px_rgba(0,0,0,0.22)]'
+        : 'border-transparent bg-transparent'
     "
   >
     <nav
       class="
-        relative
-        flex min-h-16 items-center justify-between
-        rounded-2xl
-        border border-black/[0.06]
-        bg-white/80
-        px-3.5
-        shadow-[0_8px_30px_rgba(15,23,42,0.06)]
-        backdrop-blur-lg
-
-        transition-[background-color,border-color,box-shadow]
-        duration-300
-        motion-reduce:transition-none
-
-        dark:border-white/[0.08]
-        dark:bg-background/85
-        dark:shadow-[0_8px_30px_rgba(0,0,0,0.22)]
-
-        sm:px-4
+        relative mx-auto
+        flex min-h-16 max-w-7xl items-center justify-between
+        px-5
+        sm:px-6
+        lg:px-8
       "
       aria-label="Main navigation"
     >
@@ -92,7 +97,7 @@ watch(
           aria-hidden="true"
         >
           <NuxtImg
-            src="/images/logo.png"
+            src="/images/logo.webp"
             alt=""
             width="36"
             height="36"
@@ -189,6 +194,7 @@ watch(
 
             transition-colors duration-200
             hover:bg-black/[0.045]
+            dark:hover:bg-white/[0.07]
             motion-reduce:transition-none
 
             focus-visible:outline-none
@@ -254,7 +260,7 @@ watch(
         v-if="isMenuOpen"
         id="mobile-navigation"
         class="
-          mt-2
+          mx-5 mt-2
           rounded-2xl
           border border-black/[0.06]
           bg-white/95
@@ -265,6 +271,8 @@ watch(
           dark:border-white/[0.08]
           dark:bg-background/95
           dark:shadow-[0_10px_30px_rgba(0,0,0,0.24)]
+
+          sm:mx-6
 
           md:hidden
         "

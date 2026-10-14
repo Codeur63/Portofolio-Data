@@ -6,6 +6,10 @@
 .cache
 dist
 
+# Bundle analysis
+bundle-report.html
+bundle-report.txt
+
 # Node dependencies
 node_modules
 

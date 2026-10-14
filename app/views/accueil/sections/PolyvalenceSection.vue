@@ -26,8 +26,8 @@ const colorMode = useColorMode()
 
 const imageSolution = computed(() =>
   colorMode.value === 'dark'
-    ? '/images/avatar/avatar-1-dark.png'
-    : '/images/avatar/avatar-1-light.png'
+    ? '/images/avatar/avatar-1-dark.webp'
+    : '/images/avatar/avatar-1-light.webp'
 )
 
 </script>
@@ -167,26 +167,19 @@ const imageSolution = computed(() =>
             class="samurai relative flex h-full w-full
                    items-end justify-center"
           >
-            <picture>
-              <source
-                media="(prefers-color-scheme: dark)"
-                :srcset="imageSolution"
-              />
-
-              <img
-                :src="imageSolution"
-                alt=""
-                width="500"
-                height="680"
-                loading="lazy"
-                decoding="async"
-                class="relative z-10 max-h-[650px] w-auto
-                       object-contain object-bottom
-                       drop-shadow-[0_35px_45px_rgba(0,0,0,0.16)]
-                       transition-transform duration-700 ease-out
-                       dark:drop-shadow-[0_35px_50px_rgba(0,0,0,0.45)]"
-              />
-            </picture>
+            <img
+              :src="imageSolution"
+              alt=""
+              width="500"
+              height="680"
+              loading="lazy"
+              decoding="async"
+              class="relative z-10 max-h-[650px] w-auto
+                     object-contain object-bottom
+                     drop-shadow-[0_35px_45px_rgba(0,0,0,0.16)]
+                     transition-transform duration-700 ease-out
+                     dark:drop-shadow-[0_35px_50px_rgba(0,0,0,0.45)]"
+            />
           </div>
 
           <div

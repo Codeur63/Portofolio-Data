@@ -23,19 +23,19 @@ const capabilities = [
 
 const visuals = [
   {
-    src: '/images/skills/skill-data.png',
+    src: '/images/skills/skill-data.webp',
     alt: 'Data analytics dashboard from a Xiani project',
     label: 'Data Analytics',
     type: 'Dashboard',
   },
   {
-    src: '/images/skills/skill-data-mlflow.png',
+    src: '/images/skills/skill-data-mlflow.webp',
     alt: 'MLflow experiment tracking interface',
     label: 'Experiment Tracking',
     type: 'MLflow',
   },
   {
-    src: '/images/skills/skill-data-grafana.png',
+    src: '/images/skills/skill-data-grafana.webp',
     alt: 'Grafana monitoring dashboard',
     label: 'Observability',
     type: 'Grafana',

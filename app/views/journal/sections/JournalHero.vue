@@ -33,7 +33,7 @@
 
 <template>
   <section
-    class="mx-auto max-w-7xl px-5 pb-12 pt-20 sm:px-6 sm:pt-24 lg:px-8 lg:pt-28"
+    class="relative isolate mx-auto max-w-7xl px-5 pb-16 pt-28 sm:px-6 sm:pt-32 lg:px-8 lg:pb-24 lg:pt-36"
     aria-labelledby="journal-title"
   >
     <!-- Background -->
@@ -48,40 +48,30 @@
       aria-hidden="true"
     />
 
-    <div class="mx-auto max-w-7xl flex flex-col items-center justify-center">
-      <div class="max-w-3xl text-center">
-        <!-- Title -->
-        <h1
-          id="journal-title"
-          class="text-[clamp(2.8rem,6.2vw,6.2rem)]
-                 font-semibold leading-[0.98]
-                 tracking-[-0.055em]
-                 text-text"
+    <div class="mx-auto flex max-w-3xl flex-col items-center text-center">
+      <h1
+        id="journal-title"
+        class="text-[clamp(2.8rem,6.2vw,6.2rem)]
+               font-semibold leading-[0.98]
+               tracking-[-0.055em]
+               text-text"
+      >
+        Building.
+
+        <span
+          class="block bg-gradient-to-r
+                 from-primary via-violet-500 to-accent
+                 bg-clip-text text-transparent"
         >
-          Building.
+          Learning. Sharing.
+        </span>
+      </h1>
 
-          <span
-            class="block bg-gradient-to-r
-                   from-primary via-violet-500 to-accent
-                   bg-clip-text text-transparent"
-          >
-            Learning. Sharing.
-          </span>
-        </h1>
-
-        <!-- Introduction -->
-      </div>
-        <div>            
-            <p
-            class="mt-7 max-w-xl text-center
-                    text-base leading-7 text-muted
-                    sm:text-lg sm:leading-8"
-            >
-            A collection of projects, technical experiments
-            and engineering notes exploring software,
-            data and artificial intelligence.
-            </p>
-        </div>
+      <p class="mt-7 max-w-xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+        A collection of projects, technical experiments
+        and engineering notes exploring software,
+        data and artificial intelligence.
+      </p>
     </div>
   </section>
 </template>

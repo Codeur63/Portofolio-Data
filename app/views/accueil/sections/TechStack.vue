@@ -37,7 +37,8 @@ const rows = [
              border border-black/[0.06]
              shadow-[0_20px_70px_rgba(15,23,42,0.08)]
              backdrop-blur-xl
-             dark:border-white/[0.08] "
+             dark:border-white/[0.08]
+             dark:shadow-[0_20px_70px_rgba(0,0,0,0.28)]"
     >
       <div class="flex items-center justify-center gap-3 px-6 pb-4 pt-6">
         <span
@@ -45,12 +46,12 @@ const rows = [
           aria-hidden="true"
         />
 
-        <h2
+        <p
           id="tech-stack-title"
           class="text-[11px] font-semibold uppercase tracking-[0.18em] text-muted"
         >
           Technologies &amp; engineering stack
-        </h2>
+        </p>
       </div>
 
       <div class="relative overflow-hidden pb-6">
@@ -63,8 +64,8 @@ const rows = [
           >
             <div class="tech-track">
               <div
-                v-for="technology in [...row, ...row]"
-                :key="`${rowIndex}-${technology.name}-${Math.random}`"
+                v-for="(technology, techIndex) in [...row, ...row]"
+                :key="`${rowIndex}-${techIndex}-${technology.name}`"
                 class="tech-item"
               >
                 <Icon

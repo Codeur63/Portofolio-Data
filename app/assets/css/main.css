@@ -1,72 +1,57 @@
 @import "tailwindcss";
 
-/* Fonts */
-
-@font-face {
-  font-family: "Mulish";
-  src: url("/fonts/Mulish/static/Mulish-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Mulish";
-  src: url("/fonts/Mulish/static/Mulish-Medium.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Mulish";
-  src: url("/fonts/Mulish/static/Mulish-SemiBold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Mulish";
-  src: url("/fonts/Mulish/static/Mulish-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-}
-
 /* Theme */
 
 @theme {
   --color-text: #1C1C1C;
   --color-background: #FAFAFF;
-  --color-primary: #2DE1FC;
+  --color-surface: #FFFFFF;
+  --color-surface-secondary: #F1F1F8;
+  --color-foreground: #1C1C1C;
+  --color-primary: #0E7490;
+  --color-primary-hover: #155E75;
+  --color-primary-ink: #FFFFFF;
   --color-secondary: #985F99;
-  --color-accent: #9BE564;
+  --color-accent: #65A30D;
   --color-muted: #6B7280;
+  --color-border: #E4E4EF;
+  --color-error: #DC2626;
+  --color-success: #16A34A;
+  --color-warning: #D97706;
+  --color-bordeaux: #7F1D1D;
+  --color-data: #A5B4FC;
 
-  --font-sans: "Mulish", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: "Mulish Variable", "Roboto Variable", "Mulish", "Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
-
 
 /* Global Styles */
 
 html,
 body {
   color: var(--color-text);
-  font-family: "Mulish", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
 
-  max-width: 100vw;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
-
-
 
 /* Theme Dark */
 
 .dark {
+  --color-text: #FAFAFF;
   --color-background: #100A18;
   --color-surface: #1A1024;
+  --color-surface-secondary: #221734;
   --color-foreground: #F5EEF8;
-  --color-primary: #A85BE0;
-  --color-text: #FAFAFF;
+  --color-primary: #B36BE6;
+  --color-primary-hover: #C084EE;
+  --color-primary-ink: #100A18;
+  --color-secondary: #B97AB9;
+  --color-accent: #A3E635;
+  --color-muted: #9CA3AF;
+  --color-border: #2A2140;
+  --color-error: #F87171;
+  --color-success: #4ADE80;
+  --color-warning: #FBBF24;
+  --color-bordeaux: #B91C1C;
+  --color-data: #A5B4FC;
 }

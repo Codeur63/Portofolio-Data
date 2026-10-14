@@ -11,14 +11,14 @@ const metrics = [
 
 const heroImage = computed(() =>
   colorMode.value === 'dark'
-    ? '/images/hero/avatar-dark.png'
-    : '/images/hero/avatar-light.png'
+    ? '/images/hero/avatar-dark.webp'
+    : '/images/hero/avatar-light.webp'
 )
 </script>
 
 <template>
   <section
-    class="relative isolate flex min-h-svh w-full items-center overflow-hidden bg-background pt-24 sm:pt-28 lg:pt-32"
+    class="relative isolate flex min-h-svh w-full items-center overflow-hidden bg-background pt-28 sm:pt-32 lg:pt-36"
     aria-labelledby="hero-title"
   >
     <!-- Decorative background -->
@@ -47,7 +47,7 @@ const heroImage = computed(() =>
     <div
       class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14
              px-5 pb-16 sm:px-6
-             lg:grid-cols-[1.08fr_.92fr] lg:gap-12 lg:px-8 lg:pb-20"
+             lg:grid-cols-[1.08fr_.92fr] lg:gap-12 lg:px-8 lg:pb-24"
     >
       <div class="relative z-10 max-w-3xl">
         <h1
@@ -114,52 +114,52 @@ const heroImage = computed(() =>
         <div
           class="relative isolate mx-auto w-full max-w-2xl overflow-hidden"
         >
-          <NuxtImg
-            :src="heroImage"
-            alt=""
-            width="00"
-            height="1000"
-            sizes="800px"            
-            format="webp"
-            quality="70"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-            class="z-10 block h-full max-w-none object-cover object-top"
-          />
+            <NuxtImg
+              :src="heroImage"
+              alt=""              
+              width="800"
+              height="1000"
+              sizes="490px"
+              format="webp"
+              quality="85"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"              
+              class="h-full block w-full object-cover object-top"
+            />
         </div>
 
         <div
           class="mt-6 flex flex-row justify-around"
           aria-label="Core technologies"
         >
-          <UIcon
+          <Icon
             name="skill-icons:aws-light"
-            class="size-10 dark:hidden xl:size-15"
+            class="w-10 h-10"
             aria-hidden="true"
           />
 
           <Icon
             name="skill-icons:aws-dark"
-            class="hidden size-10 dark:block xl:size-15"
+            class="hidden w-10 h-10 dark:block xl:size-15"
             aria-hidden="true"
           />
 
           <Icon
             name="logos:python"
-            class="size-10 xl:size-15"
+            class="size-10 w-10 h-10"
             aria-hidden="true"
           />
 
           <Icon
             name="grommet-icons:genai"
-            class="size-10 xl:size-15"
+            class="w-10 h-10"
             aria-hidden="true"
           />
 
           <Icon
             name="bxs:data"
-            class="size-10 xl:size-15"
+            class="w-10 h-10"
             aria-hidden="true"
           />
         </div>

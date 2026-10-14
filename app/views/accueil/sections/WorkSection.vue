@@ -89,9 +89,10 @@ const proofs = [
 
           <h2
             id="proof-title"
-            class="mt-4 max-w-xl text-2xl
-                   font-semibold tracking-[-0.035em]
-                   text-text sm:text-3xl"
+            class="mt-4 max-w-xl
+                   text-[clamp(2.25rem,4vw,3.75rem)]
+                   font-semibold leading-[1.02] tracking-[-0.055em]
+                   text-text"
           >
             Engineering is measured
             <span class="text-primary">

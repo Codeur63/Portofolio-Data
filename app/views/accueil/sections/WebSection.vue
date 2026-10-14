@@ -130,7 +130,7 @@ const capabilities = [
           </div>
 
           <NuxtImg
-            src="/images/skills/skill-web.png"
+            src="/images/skills/skill-web.webp"
             alt="Preview of a web application designed and developed by Xiani"
             width="900"
             height="402"

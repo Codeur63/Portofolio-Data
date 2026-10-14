@@ -4,8 +4,8 @@ const colorMode = useColorMode()
 
 const heroImage = computed(() =>
   colorMode.value === 'dark'
-    ? '/images/avatar/avatar-3-dark.png'
-    : '/images/avatar/avatar-3-light.png'
+    ? '/images/avatar/avatar-3-dark.webp'
+    : '/images/avatar/avatar-3-light.webp'
 )
 
 const principles = [
@@ -196,25 +196,19 @@ const principles = [
           />
 
           <div class="samurai relative flex h-full w-full items-end justify-center">
-            <picture>
-              <source
-                media="(prefers-color-scheme: dark)"
-                :srcset="heroImage"
-              />
-
-              <img
-                :src="heroImage"
-                alt=""
-                width="520"
-                height="680"
-                loading="lazy"
-                decoding="async"
-                class="relative z-10 max-h-[650px] w-auto
-                       object-contain object-bottom
-                       drop-shadow-[0_35px_45px_rgba(0,0,0,0.15)]
-                       transition-transform duration-700"
-              />
-            </picture>
+            <img
+              :src="heroImage"
+              alt=""
+              width="520"
+              height="680"
+              loading="lazy"
+              decoding="async"
+              class="relative z-10 max-h-[650px] w-auto
+                     object-contain object-bottom
+                     drop-shadow-[0_35px_45px_rgba(0,0,0,0.15)]
+                     dark:drop-shadow-[0_35px_50px_rgba(0,0,0,0.45)]
+                     transition-transform duration-700"
+            />
           </div>
 
           <div
