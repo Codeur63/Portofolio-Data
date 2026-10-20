@@ -75,14 +75,15 @@ const aiProjects = [
                  font-semibold leading-[0.97]
                  tracking-[-0.055em] text-text"
         >
-          I build systems
+          AI tools
+
 
           <span
             class="block bg-gradient-to-r from-secondary
                    via-primary to-accent
                    bg-clip-text text-transparent"
           >
-            that understand and take action.
+            for information and action.
           </span>
         </h2>
 
@@ -90,10 +91,7 @@ const aiProjects = [
           class="mt-7 max-w-2xl text-base leading-7 text-muted
                  sm:text-lg sm:leading-8"
         >
-          Computer Vision, Machine Learning, RAG and AI agents:
-          I design systems capable of extracting information,
-          using context and interacting with tools to address
-          real-world problems.
+          Computer Vision, Machine Learning, RAG and AI agents: Xiani develops integrations capable of extracting information, using context and interacting with tools to address real-world problems.
         </p>
       </div>
 

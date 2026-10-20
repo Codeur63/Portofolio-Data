@@ -63,7 +63,7 @@ const imageSolution = computed(() =>
           >
             Expertise.
 
-            <span class="mt-1 block text-muted/50">
+            <span class="mt-1 block">
               Multiple dimensions.
             </span>
           </h2>
@@ -72,7 +72,7 @@ const imageSolution = computed(() =>
             class="mt-8 max-w-xl text-base leading-7 text-muted
                    sm:text-lg sm:leading-8"
           >
-            We build end-to-end solutions, from data architecture
+            XIANI build end-to-end solutions, from data architecture
             to artificial intelligence models, right through to
             the interfaces that make them truly usable.
           </p>
@@ -125,7 +125,7 @@ const imageSolution = computed(() =>
             class="pointer-events-none absolute left-1/2 top-[20%] -z-10
                    -translate-x-1/2 -translate-y-1/2 select-none
                    whitespace-nowrap text-[8rem] font-bold
-                   tracking-[-0.08em] text-text/[0.025]"
+                   tracking-[-0.08em] text-text/[0.225]"
             aria-hidden="true"
           >
             BUILD

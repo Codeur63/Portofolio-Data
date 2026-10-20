@@ -12,6 +12,6 @@ import AboutCTA from "./sections/AboutCTA.vue";
         <AboutMindset/>
         <AboutExpertise/>
         <AboutBeyondTech/>
-         <AboutCTA/> 
+        <AboutCTA/> 
     </div>
 </template>

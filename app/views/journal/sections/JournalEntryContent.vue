@@ -22,7 +22,7 @@ defineProps<{
       <aside class="hidden lg:block">
         <div class="sticky top-28">
           <p
-            class="text-[9px] font-semibold uppercase
+            class="text-xs font-semibold uppercase
                    tracking-[0.18em] text-muted"
           >
             Contents
@@ -69,7 +69,7 @@ defineProps<{
             aria-hidden="true"
           >
             <span
-              class="font-mono text-[9px]
+              class="font-mono text-xs
                      text-primary"
             >
               0{{ index + 1 }}

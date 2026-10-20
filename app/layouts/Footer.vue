@@ -27,10 +27,9 @@ const socialLinks = [
     class="
       relative isolate
       overflow-hidden
-      border-t border-black/[0.06]
+      border-t border-border border-black
       bg-background
 
-      dark:border-white/[0.08]
     "
   >
     <div
@@ -112,45 +111,10 @@ const socialLinks = [
               text-muted
             "
           >
-            I design systems at the intersection of
-            software engineering, data and
-            artificial intelligence.
+           Xiani builds systems at the intersection of software engineering, data and artificial intelligence.
           </p>
 
-          <!-- Expertise -->
-          <div
-            class="
-              mt-7
-              flex flex-wrap
-              gap-x-4 gap-y-2
-
-              text-[10px]
-              font-semibold
-              uppercase
-              tracking-[0.14em]
-              text-muted/70
-            "
-          >
-            <span>Software Engineering</span>
-
-            <span
-              class="hidden text-primary/60 sm:inline"
-              aria-hidden="true"
-            >
-              /
-            </span>
-
-            <span>Data Engineering</span>
-
-            <span
-              class="hidden text-primary/60 sm:inline"
-              aria-hidden="true"
-            >
-              /
-            </span>
-
-            <span>Artificial Intelligence</span>
-          </div>
+          
         </div>
 
         <!-- Navigation -->
@@ -174,8 +138,7 @@ const socialLinks = [
           <nav
             class="
               mt-5
-              flex flex-col
-              items-start gap-3
+              grid grid-cols-2             
             "
             aria-label="Footer navigation"
           >
@@ -322,13 +285,12 @@ const socialLinks = [
             font-semibold
             leading-[0.8]
             tracking-[-0.075em]
-
             text-muted
 
           "
           aria-hidden="true"
         >
-          <span class="tracking-widest">
+          <span class="tracking-[1em] text-center">
             XIANI
           </span>
         </p>
@@ -340,7 +302,7 @@ const socialLinks = [
           mt-10
           flex flex-col gap-3          
           py-6
-
+          border-t border-border/20 dark:border-text/20
           text-xs
           text-muted/70
 
@@ -354,9 +316,29 @@ const socialLinks = [
           © {{ currentYear }} Xiani. All rights reserved.
         </p>
 
-        <p>
-          Software · Data · AI
-        </p>
+        <!-- Expertise -->
+          <div
+          >
+            <span>Software Engineering</span>
+
+            <span
+              class="hidden text-primary/60 sm:inline"
+              aria-hidden="true"
+            >
+              /
+            </span>
+
+            <span>Data Engineering</span>
+
+            <span
+              class="hidden text-primary/60 sm:inline"
+              aria-hidden="true"
+            >
+              /
+            </span>
+
+            <span>Artificial Intelligence</span>
+          </div>
       </div>
     </div>
   </footer>

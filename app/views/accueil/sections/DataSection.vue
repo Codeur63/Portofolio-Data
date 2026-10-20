@@ -108,10 +108,7 @@ onBeforeUnmount(() => {
             class="mt-7 max-w-lg text-base leading-7 text-muted
                    sm:text-lg sm:leading-8"
           >
-            I design data architectures and pipelines capable
-            of collecting, structuring and making complex data
-            usable, with a particular focus on performance,
-            observability and reliability.
+            Xiani designs data architectures and pipelines capable of collecting, structuring and making complex data usable, with a particular focus on performance, observability and reliability.
           </p>
         </ScrollReveal>
 
@@ -173,36 +170,28 @@ onBeforeUnmount(() => {
                 Data Platform · {{ visuals[activeIndex]?.type }}
               </span>
 
-              <span class="font-mono text-[9px] text-muted">
+              <span class="font-mono text-xs text-muted">
                 SOLARMBOA
               </span>
             </div>
 
             <!-- Current image only -->
-            <div class="relative aspect-[16/10] overflow-hidden">
-              <NuxtImg
+            <div class="bg-surface">
+              <NuxtImg fit="inside"
                 :src="visuals[activeIndex]!.src"
                 :alt="visuals[activeIndex]!.alt"
                 width="1200"
                 height="750"
-                sizes="(max-width: 1280px) 100vw, 768px"
+                sizes="sm:100vw xl:768px"
                 format="webp"
                 quality="72"
                 loading="lazy"
                 decoding="async"
-                class="h-full w-full object-cover object-top"
-              />
-
-              <div
-                class="pointer-events-none absolute inset-x-0
-                       bottom-0 h-24
-                       bg-gradient-to-t from-black/40 to-transparent"
-                aria-hidden="true"
+                class="block h-auto w-full object-contain"
               />
 
               <p
-                class="absolute bottom-5 left-5
-                       text-sm font-semibold text-white"
+                class="border-t border-text/10 px-4 py-3 text-sm font-semibold text-text"
               >
                 {{ visuals[activeIndex]?.label }}
               </p>
@@ -240,7 +229,7 @@ onBeforeUnmount(() => {
                 </button>
               </div>
 
-              <p class="text-[10px] text-muted">
+              <p class="text-xs text-muted">
                 Dashboard · Tracking · Monitoring
               </p>
             </div>

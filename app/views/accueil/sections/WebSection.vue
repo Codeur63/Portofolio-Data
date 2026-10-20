@@ -66,10 +66,7 @@ const capabilities = [
               class="max-w-lg text-base leading-8 text-muted
                      sm:text-lg"
             >
-              We design applications and software systems by
-              integrating architecture, development and user
-              experience, with a particular focus on
-              maintainability and long-term evolution.
+              Xiani designs applications and software systems by integrating architecture, development and user experience, with a particular focus on maintainability and long-term evolution.
             </p>
 
             <NuxtLink
@@ -100,7 +97,7 @@ const capabilities = [
       </ScrollReveal>
 
       <!-- Project preview -->
-      <ScrollReveal>
+       <ScrollReveal>
         <figure
           class="mx-auto mt-8 max-w-4xl overflow-hidden rounded-2xl
                  border border-text/10 bg-background
@@ -120,7 +117,7 @@ const capabilities = [
             </div>
 
             <span
-              class="text-[10px] font-medium uppercase
+              class="text-xs font-medium uppercase
                      tracking-[0.18em] text-muted sm:text-xs"
             >
               Project preview
@@ -129,17 +126,17 @@ const capabilities = [
             <span class="w-[39px]" aria-hidden="true" />
           </div>
 
-          <NuxtImg
+          <NuxtImg fit="inside"
             src="/images/skills/skill-web.webp"
             alt="Preview of a web application designed and developed by Xiani"
             width="900"
             height="402"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 896px"
+            sizes="sm:100vw lg:896px"
             format="webp"
             quality="72"
             loading="lazy"
             decoding="async"
-            class="block h-auto w-full object-cover object-center"
+            class="block h-auto w-full object-contain object-center"
           />
 
           <figcaption

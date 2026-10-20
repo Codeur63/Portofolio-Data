@@ -28,7 +28,7 @@ const formatDate = (date: string) => {
                rounded-2xl border border-text/10
                bg-text/[0.025]"
       >
-        <NuxtImg
+        <NuxtImg fit="inside"
           v-if="entry.image"
           :src="entry.image"
           :alt="entry.imageAlt || ''"
@@ -39,7 +39,7 @@ const formatDate = (date: string) => {
           loading="lazy"
           decoding="async"
           sizes="sm:100vw md:50vw lg:33vw"
-          class="h-full w-full object-cover
+          class="h-full w-full object-contain
                  transition-transform duration-500
                  group-hover:scale-[1.02]
                  motion-reduce:transform-none"
@@ -66,7 +66,7 @@ const formatDate = (date: string) => {
           class="absolute left-4 top-4
                  rounded-full
                  bg-background/90 px-3 py-1.5
-                 text-[9px] font-semibold uppercase
+                 text-xs font-semibold uppercase
                  tracking-[0.15em] text-text
                  backdrop-blur-sm"
         >
@@ -89,7 +89,7 @@ const formatDate = (date: string) => {
           </strong>
 
           <span
-            class="text-[9px] uppercase
+            class="text-xs uppercase
                    tracking-[0.14em] text-muted"
           >
             {{ entry.metric.label }}
@@ -101,7 +101,7 @@ const formatDate = (date: string) => {
       <div class="pt-5">
         <div
           class="flex items-center gap-2
-                 text-[10px] text-muted"
+                 text-xs text-muted"
         >
           <span class="font-medium text-primary">
             {{ entry.category }}
@@ -147,7 +147,7 @@ const formatDate = (date: string) => {
             :key="tag"
             class="rounded-full border border-text/10
                    px-2.5 py-1
-                   text-[9px] text-muted"
+                   text-xs text-muted"
           >
             {{ tag }}
           </span>

@@ -22,7 +22,7 @@ defineProps<{
         />
 
         <p
-          class="text-[10px] font-semibold uppercase
+          class="text-xs font-semibold uppercase
                  tracking-[0.2em] text-muted"
         >
           Featured project
@@ -48,7 +48,7 @@ defineProps<{
           <div>
             <div
               class="flex flex-wrap items-center gap-2
-                     text-[10px]"
+                     text-xs"
             >
               <span
                 class="font-semibold uppercase
@@ -97,7 +97,7 @@ defineProps<{
                 class="rounded-full
                        border border-text/10
                        px-3 py-1.5
-                       text-[10px] text-muted"
+                       text-xs text-muted"
               >
                 {{ tag }}
               </span>
@@ -151,7 +151,7 @@ defineProps<{
             <!-- Architecture -->
             <div>
               <p
-                class="font-mono text-[9px]
+                class="font-mono text-xs
                        uppercase tracking-[0.18em]
                        text-muted"
               >
@@ -199,7 +199,7 @@ defineProps<{
                      border-text/10 pt-7"
             >
               <p
-                class="font-mono text-[9px]
+                class="font-mono text-xs
                        uppercase tracking-[0.18em]
                        text-muted"
               >

@@ -14,7 +14,6 @@ import ContactSection from './sections/ContactSection.vue'
 <template>
   <div>
     <Hero />
-
     <TechStack />
     <PolyvalenceSection />
     <WebSection />

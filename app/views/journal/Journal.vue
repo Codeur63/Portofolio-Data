@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { JournalEntry, journalEntries } from '~/data/journal'
+import { journalEntries, type JournalEntry, type JournalDomain } from '~/data/journal'
+import FeaturedEntry from './sections/FeaturedEntry.vue'
 import JournalHero from './sections/JournalHero.vue'
 import JournalFilters from './sections/JournalFilters.vue'
 import JournalCard from './sections/JournalCard.vue'
@@ -13,7 +14,7 @@ const featuredEntry = journalEntries.find(
 
 const filteredEntries = computed<JournalEntry[]>(() => {
   const entries = journalEntries.filter(
-    entry => entry.slug !== featuredEntry?.slug,
+    entry => activeFilter.value !== 'all' || entry.slug !== featuredEntry?.slug,
   )
 
   switch (activeFilter.value) {
@@ -37,9 +38,10 @@ const filteredEntries = computed<JournalEntry[]>(() => {
       )
 
     default:
-      return entries
+      return [...entries].sort((a, b) => b.date.localeCompare(a.date))
   }
 })
+const displayedEntryCount = computed(() => filteredEntries.value.length + (featuredEntry && activeFilter.value === 'all' ? 1 : 0))
 </script>
 
 <template>
@@ -47,7 +49,7 @@ const filteredEntries = computed<JournalEntry[]>(() => {
     <JournalHero />
 
     <FeaturedEntry
-      v-if="featuredEntry"
+      v-if="featuredEntry && activeFilter === 'all'"
       :entry="featuredEntry"
     />
 
@@ -65,14 +67,14 @@ const filteredEntries = computed<JournalEntry[]>(() => {
                  border-text/10 pb-4"
         >
           <p
-            class="text-[10px] font-semibold
+            class="text-xs font-semibold
                    uppercase tracking-[0.17em]
                    text-muted"
             aria-live="polite"
           >
-            {{ filteredEntries.length }}
+            {{ displayedEntryCount }}
             {{
-              filteredEntries.length === 1
+              displayedEntryCount === 1
                 ? 'entry'
                 : 'entries'
             }}

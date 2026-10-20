@@ -8,6 +8,8 @@ const form = reactive({
   website: '',
 })
 
+const colorMode = useColorMode()
+
 const subjects = [
   { value: '', label: 'Select a subject' },
   { value: 'project', label: 'Project or service' },
@@ -15,6 +17,12 @@ const subjects = [
   { value: 'recruitment', label: 'Professional opportunity' },
   { value: 'other', label: 'Other request' },
 ] as const
+
+const contactImage = computed(() =>
+  colorMode.value === 'dark'
+    ? '/images/contact/pigeon-dark.webp'
+    : '/images/contact/pigeon-light.webp'
+)
 
 const status = ref<'idle' | 'sending' | 'success' | 'error'>('idle')
 
@@ -59,7 +67,7 @@ async function submit() {
       px-5 pb-28
 
       sm:px-6
-
+      relative
       lg:grid-cols-[minmax(0,1.4fr)_minmax(270px,0.6fr)]
       lg:gap-20
       lg:px-8
@@ -343,5 +351,20 @@ async function submit() {
         </p>
       </div>
     </aside>
+
+    <div
+          class="absolute inset-0 isolate mx-auto w-full max-w-2xl overflow-hidden"
+        >
+            <NuxtImg
+              :src="contactImage"
+              alt=""         
+              format="webp"
+              quality="85"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"              
+              class="h-full block w-full object-contain object-top text-muted opacity-30"
+            />
+        </div>
   </section>
 </template>

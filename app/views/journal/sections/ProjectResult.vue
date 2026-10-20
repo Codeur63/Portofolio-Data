@@ -38,7 +38,7 @@ defineProps<{
         </span>
 
         <span
-          class="mt-3 text-[10px]
+          class="mt-3 text-xs
                  font-semibold uppercase
                  tracking-[0.18em]
                  text-primary"
@@ -49,11 +49,11 @@ defineProps<{
 
       <div class="p-8 md:p-10">
         <p
-          class="text-[9px] font-semibold
+          class="text-xs font-semibold
                  uppercase tracking-[0.18em]
                  text-muted"
         >
-          Measured outcome
+          Experiment context
         </p>
 
         <h2
@@ -61,17 +61,14 @@ defineProps<{
                  tracking-[-0.035em]
                  text-text"
         >
-          Results over assumptions.
+          Read the result in context.
         </h2>
 
         <p
           class="mt-4 max-w-xl
                  text-sm leading-7 text-muted"
         >
-          The result shown here comes from the technical
-          experiment described in this project and reflects
-          the measured test scenario rather than a general
-          performance guarantee.
+          The figure describes this experiment. Dataset volume is not a quality score, and a benchmark is not a production guarantee. The study below explains the recorded results and their limits.
         </p>
       </div>
     </div>

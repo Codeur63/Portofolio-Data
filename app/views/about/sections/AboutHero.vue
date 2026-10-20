@@ -13,7 +13,7 @@ const heroImage = computed(() =>
   <section
     id="about-intro"
     aria-labelledby="about-hero-title"
-    class="
+    class=" border-b border-border/20 dark:border-text/20
     relative isolate mx-auto max-w-7xl px-5 pb-16 pt-28 sm:px-6 sm:pt-32 lg:px-8 lg:pb-24 lg:pt-36
     "
   >
@@ -42,23 +42,23 @@ const heroImage = computed(() =>
       "
     >
       <!-- Content -->
-      <div>
+      <div class="max-w-3xl mx-auto text-center lg:text-left">
         <h1
           id="about-hero-title"
           class="
             max-w-3xl
-            text-[clamp(2.8rem,6.2vw,6.2rem)]
-            font-semibold
+            text-[clamp(2.8rem,5.2vw,5rem)]
+            font-bold
             leading-[0.98]
             tracking-[-0.055em]
             text-text
           "
         >
-          We build bespoke
+          Built around
             <span class="mt-1 block bg-gradient-to-r from-primary
                 via-violet-500 to-accent
                 bg-clip-text text-transparent">
-                Systems
+                your business.
             </span>
         </h1>
 
@@ -70,12 +70,10 @@ const heroImage = computed(() =>
             sm:text-lg
           "
         >
-          Xiani brings together software architecture, data engineering
-          and artificial intelligence to design coherent, reliable and
-          measurable systems.
+          Xiani is an independent engineering studio for software, data and AI projects. Work begins with your business problem and a practical scope, whether you need a focused prototype, an integration or a custom application.
         </p>
 
-        <div class="mt-6 flex flex-wrap items-center gap-4 ">
+        <div class="mt-6 flex justify-center lg:justify-start flex-wrap items-center gap-4 ">
           <NuxtLink
             to="/journal"
             class=" group
@@ -103,7 +101,7 @@ const heroImage = computed(() =>
           >
             Explore our work
 
-            <span aria-hidden="true" class="
+            <span aria-hidden="true" class=" group-hover:translate-x-0.5
                 
                 ">
               ↗

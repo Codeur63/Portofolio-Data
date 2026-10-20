@@ -93,7 +93,7 @@ const solutions = [
           class="max-w-lg text-sm leading-7 text-muted
                  sm:text-base sm:leading-8"
         >
-          I combine software development, data engineering
+          We combine software development, data engineering
           and artificial intelligence to address real-world
           operational challenges.
         </p>

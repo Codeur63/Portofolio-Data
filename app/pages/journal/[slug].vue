@@ -12,13 +12,12 @@
    ),
  )
  
- if (!entry.value) {
-   throw createError({
-     statusCode: 404,
-     statusMessage: 'Journal entry not found',
-   })
- }
- 
+ definePageMeta({
+   validate: route => journalEntries.some(item => item.slug === route.params.slug)
+     ? true
+     : { statusCode: 404, statusMessage: 'Journal entry not found' },
+ })
+
  useSeoMeta({
    title: () => entry.value?.title ?? 'Journal',
  
@@ -39,14 +38,14 @@
    twitterCard: 'summary_large_image',
  })
  
- useHead({
+ useHead(() => ({
    meta: [
      {
        property: 'article:published_time',
-       content: entry.value.date,
+       content: entry.value?.date ?? '',
      },
    ],
- })
+ }))
  </script>
  
  <template>
@@ -77,7 +76,7 @@
          <div
            class="mt-12 flex flex-wrap
                   items-center gap-2
-                  text-[10px]"
+                  text-xs"
          >
            <span
              class="font-semibold uppercase
@@ -141,7 +140,7 @@
              class="rounded-full
                     border border-text/10
                     px-3 py-1.5
-                    text-[10px] text-muted"
+                    text-xs text-muted"
            >
              {{ tag }}
            </span>
@@ -153,7 +152,7 @@
                   rounded-3xl
                   border border-text/10"
          >
-           <NuxtImg
+           <NuxtImg fit="inside"
              :src="entry.image"
              :alt="entry.imageAlt || ''"
              width="1200"
@@ -162,9 +161,8 @@
              quality="75"
              loading="eager"
              fetchpriority="high"
-             sizes="100vw lg:1200px"
-             class="aspect-video
-                    w-full object-cover"
+             sizes="sm:100vw lg:1024px"
+             class="block h-auto w-full object-contain"
            />
          </div>
        </div>
@@ -195,7 +193,7 @@
        >
          <div>
            <p
-             class="text-[10px] font-semibold
+             class="text-xs font-semibold
                     uppercase tracking-[0.18em]
                     text-muted"
            >

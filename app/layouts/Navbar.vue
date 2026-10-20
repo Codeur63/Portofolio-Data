@@ -52,10 +52,11 @@ watch(
       transition-[background-color,border-color,box-shadow]
       duration-300
       motion-reduce:transition-none
+      max-w-3xl xl:max-w-5xl mx-auto rounded-lg md:mt-3 mx-5
     "
     :class="
       scrolled
-        ? 'border-black/[0.06] bg-white/80 shadow-[0_8px_30px_rgba(15,23,42,0.06)] backdrop-blur-lg dark:border-white/[0.08] dark:bg-background/85 dark:shadow-[0_8px_30px_rgba(0,0,0,0.22)]'
+        ? 'border-black/[0.06] bg-white/60 shadow-[0_8px_30px_rgba(15,23,42,0.06)] backdrop-blur-xl dark:border-white/[0.08] dark:bg-background/85 dark:shadow-[0_8px_30px_rgba(0,0,0,0.22)]'
         : 'border-transparent bg-transparent'
     "
   >
@@ -117,7 +118,7 @@ watch(
         <span
           class="
             text-base font-bold
-            tracking-[-0.025em]
+            tracking-[0.5em]
             text-text
             transition-colors duration-200
             group-hover:text-primary

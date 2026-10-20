@@ -4,9 +4,9 @@ import TypeWriter from '@/components/TypeWriter.vue'
 const colorMode = useColorMode()
 
 const metrics = [
-  { value: '×3.2', label: 'Cache performance' },
-  { value: '9.7K+', label: 'RAG documents' },
-  { value: '50K+', label: 'ML observations' },
+  { value: '×3.2', label: 'Applications & automation' },
+  { value: '9.7K+', label: 'Platforms & pipelines' },
+  { value: '50K+', label: 'Search & assistants & Chatbot' },
 ]
 
 const heroImage = computed(() =>
@@ -45,7 +45,7 @@ const heroImage = computed(() =>
     />
 
     <div
-      class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-14
+      class="mx-auto max-w-3xl text-center lg:text-left grid w-full lg:max-w-7xl grid-cols-1 items-center gap-14
              px-5 pb-16 sm:px-6
              lg:grid-cols-[1.08fr_.92fr] lg:gap-12 lg:px-8 lg:pb-24"
     >
@@ -53,44 +53,46 @@ const heroImage = computed(() =>
         <h1
           id="hero-title"
           class="max-w-3xl
-                 text-[clamp(2.8rem,6.2vw,6.2rem)]
+                 text-[clamp(2.8rem,5.2vw,5rem)]
                  font-semibold
                  leading-[0.98]
                  tracking-[-0.055em]
                  text-text"
         >
-          Building data systems
+          Software, data & AI
 
           <span
             class="mt-1 block bg-gradient-to-r from-primary
                    via-violet-500 to-accent
                    bg-clip-text text-transparent"
           >
-            that think.
+           built for your business.
           </span>
         </h1>
 
-        <div class="mt-7 max-w-xl">
+        <div class="mt-7  mx-auto lg:mx-0 lg:max-w-xl">
           <div
             class="hero-secondary hero-delay-1 mb-3 flex min-h-7
-                   items-center text-base font-semibold text-text
+                   items-center text-base font-semibold text-text text-center justify-center lg:justify-start
                    sm:text-lg"
           >
             <TypeWriter />
           </div>
 
           <p
-            class="max-w-xl text-base leading-7 text-muted
+            class=" text-base text-center lg:text-left leading-7 text-muted
                    sm:text-lg sm:leading-8"
           >
-            I design data architectures and artificial intelligence
-            systems that transform complex data into reliable,
-            high-performance, and actionable products.
+            Xiani builds applications, data platforms and AI tools to automate repetitive work, connect your systems and make your information easier to use.
           </p>
         </div>
 
+        <div class="mt-6 flex justify-center lg:justify-start flex-wrap items-center gap-4">
+          <NuxtLink to="/contact" class="inline-flex min-h-12 items-center rounded-xl bg-primary px-6 text-sm font-semibold text-primary-ink transition-colors hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">Discuss your project <span class="ml-2" aria-hidden="true">↗</span></NuxtLink>
+        </div>
+
         <div
-          class="hero-secondary hero-delay-2 mt-12 flex flex-wrap
+          class="hero-secondary hero-delay-2 mt-12 flex flex-wrap justify-center 
                  gap-x-8 gap-y-5 border-t border-text/10 pt-6"
           aria-label="Project metrics"
         >
@@ -99,10 +101,6 @@ const heroImage = computed(() =>
             :key="metric.label"
             class="max-w-[110px]"
           >
-            <p class="text-xl font-semibold tracking-tight text-text">
-              {{ metric.value }}
-            </p>
-
             <p class="mt-0.5 text-xs text-muted">
               {{ metric.label }}
             </p>
@@ -125,7 +123,7 @@ const heroImage = computed(() =>
               loading="eager"
               fetchpriority="high"
               decoding="async"              
-              class="h-full block w-full object-cover object-top"
+              class="h-full block w-full object-contain object-top"
             />
         </div>
 
@@ -136,12 +134,6 @@ const heroImage = computed(() =>
           <Icon
             name="skill-icons:aws-light"
             class="w-10 h-10"
-            aria-hidden="true"
-          />
-
-          <Icon
-            name="skill-icons:aws-dark"
-            class="hidden w-10 h-10 dark:block xl:size-15"
             aria-hidden="true"
           />
 

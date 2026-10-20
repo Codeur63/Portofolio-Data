@@ -109,18 +109,20 @@ const contactImage = computed(() =>
       <div
         class="relative mx-auto hidden h-[520px]
                w-full max-w-[440px]
-               items-end justify-center md:flex"
+               items-end justify-center lg:flex"
         aria-hidden="true"
       >
+
         <span
-          class="pointer-events-none absolute left-1/2 top-[15%]
-                 -z-10 -translate-x-1/2
-                 select-none whitespace-nowrap
-                 text-[6rem] font-bold tracking-[-0.08em]
-                 text-text/[0.025]"
-        >
-          TALK
-        </span>
+            class="pointer-events-none absolute left-1/2 top-[10%]
+                   -z-10 -translate-x-1/2 -translate-y-1/2
+                   select-none whitespace-nowrap text-[8rem]
+                   font-bold tracking-[0.20em]
+                   text-text/[0.225] xl:text-[9rem]"
+            aria-hidden="true"
+          >
+            TALK
+          </span>
 
         <div
           class="pointer-events-none absolute left-1/2 top-1/2

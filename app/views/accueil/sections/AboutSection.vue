@@ -4,8 +4,8 @@ const colorMode = useColorMode()
 
 const heroImage = computed(() =>
   colorMode.value === 'dark'
-    ? '/images/avatar/avatar-3-dark.webp'
-    : '/images/avatar/avatar-3-light.webp'
+    ? '/images/avatar/avatar-2-dark.webp'
+    : '/images/avatar/avatar-2-light.webp'
 )
 
 const principles = [
@@ -56,12 +56,6 @@ const principles = [
       <!-- Content -->
       <div class="max-w-2xl">
         <ScrollReveal>
-          <span
-            class="text-[11px] font-semibold uppercase
-                   tracking-[0.2em] text-muted"
-          >
-            About
-          </span>
 
           <h2
             id="about-title"
@@ -87,18 +81,16 @@ const principles = [
                    sm:text-lg sm:leading-8"
           >
             <p>
-              I am an engineer specializing in
+              Xiani brings together 
               <strong class="font-medium text-text">
-                data engineering and artificial intelligence
-              </strong>,
-              with an approach that integrates software architecture,
-              data and intelligent systems.
+                data engineering and artificial intelligence, 
+              </strong>
+              to build tools around real workflows and practical constraints.
             </p>
 
             <p>
-              What interests me is not just making technology work,
-              but understanding how to integrate it into a coherent,
-              measurable and truly useful system.
+              Each engagement starts with a defined scope and a shared understanding of what the system should do. Technical choices follow those requirements.
+
             </p>
           </div>
         </ScrollReveal>
@@ -147,7 +139,7 @@ const principles = [
                    focus-visible:outline-offset-4
                    focus-visible:outline-primary"
           >
-            More about me
+            More about <span class="uppercase font-bold text-text" > XIANI </span>
 
             <span
               aria-hidden="true"
@@ -162,18 +154,18 @@ const principles = [
       </div>
 
       <!-- Visual -->
-      <ScrollReveal>
+      <ScrollReveal class="hidden lg:block">
         <div
-          class="relative mx-auto hidden h-[680px]
+          class="relative mx-auto hidden h-[680px] 
                  w-full max-w-[520px]
                  items-end justify-center md:flex"
         >
           <span
             class="pointer-events-none absolute left-1/2 top-[10%]
                    -z-10 -translate-x-1/2 -translate-y-1/2
-                   select-none whitespace-nowrap text-[7rem]
+                   select-none whitespace-nowrap text-[8rem]
                    font-bold tracking-[-0.08em]
-                   text-text/[0.025] xl:text-[9rem]"
+                   text-text/[0.225] xl:text-[9rem]"
             aria-hidden="true"
           >
             MINDSET
@@ -187,20 +179,12 @@ const principles = [
             aria-hidden="true"
           />
 
-          <div
-            class="pointer-events-none absolute left-1/2 top-[45%]
-                   -z-10 h-[360px] w-[360px]
-                   -translate-x-1/2 -translate-y-1/2
-                   rounded-full border border-primary/10"
-            aria-hidden="true"
-          />
-
           <div class="samurai relative flex h-full w-full items-end justify-center">
             <img
               :src="heroImage"
               alt=""
               width="520"
-              height="680"
+              height="800"
               loading="lazy"
               decoding="async"
               class="relative z-10 max-h-[650px] w-auto
@@ -242,28 +226,5 @@ const principles = [
 
 .principle:hover::after {
   width: 100%;
-}
-
-.samurai img {
-  transform: perspective(1200px) rotateY(-1.5deg);
-}
-
-.samurai:hover img {
-  transform:
-    perspective(1200px)
-    translateY(-5px)
-    scale(1.01);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .principle::after,
-  .samurai img {
-    transition: none;
-  }
-
-  .samurai img,
-  .samurai:hover img {
-    transform: none;
-  }
 }
 </style>
